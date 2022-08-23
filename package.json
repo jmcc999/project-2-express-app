@@ -1,5 +1,24 @@
 {
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "project-2-express-app",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmcc999/project-2-express-app.git"
+  },
+  "author": "Joseph McClellan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmcc999/project-2-express-app/issues"
+  },
+  "homepage": "https://github.com/jmcc999/project-2-express-app#readme"
 }
