@@ -4,8 +4,8 @@ const materials = [
     //     name:"",
     //     location:"",
     //     info:"",
-    //     defense: ,
-    //     attack:
+    //     defense: 0,
+    //     attack: 0
     //  },
     {
         type: "Food",
@@ -104,26 +104,26 @@ const materials = [
         attack: 0
      },
      {
-        type:"",
-        name:"",
-        location:"",
-        info:"",
+        type:"Food",
+        name:"Big Hearty Radish",
+        location:"Akkala Highlands, Lanayru Great Springs",
+        info:"This hearty radish has grown much larger than the average radish. It's rich in analeptic compounds that, when cooked into a dish, temporarily increase your maximum hearts.",
         defense: 0,
         attack: 0
      },
      {
-        type:"",
-        name:"",
-        location:"",
-        info:"",
+        type:"Food",
+        name:"Big Hearty Truffle",
+        location:"Hebra Mountains, Great Hyrule Forest",
+        info:"Years of going unpicked have allowed this hearty truffle to grow quite large. It's chock-full of nutrients. When cooked into a dish, it temporarily increases your maximum hearts.",
         defense: 0,
         attack: 0
      },
      {
-        type:"",
-        name:"",
-        location:"",
-        info:"",
+        type:"Food",
+        name:"Bird Egg",
+        location:"Find them in nests in trees throughout Hyrule",
+        info:"A fresh bird egg necessary for making dishes such as omelets and crepes. You can snag them from birds' nests if you're sneaky. Nutritious and delicious, perfect for cooking.",
         defense: 0,
         attack: 0
      }

@@ -2,27 +2,43 @@ const express = require("express")
 
 const app = express()
 
+const port = 3000
+
 //set up static assets, middleware
 app.use(express.static("public"))
 
 
 
 
-//link models
+// //link models
 const materials = require("./models/materials.js")
 
 
 
 //routes
 
-app.get("/", (req, res) => {
+app.get("/materials", (req, res) => {
     res.render("index.ejs", {
-    allMats : materials})
+        allMats : materials
+    })
+})
+
+
+app.get("materials/new", (req, res) => {
+    res.render("new.ejs")
+})
+
+app.get("/materials/:id", (req, res) => {
+    res.render("show.ejs", {
+        material : materials[req.params.id]
+    })
 })
 
 
 
+//listener
 
-app.listen (3000, () => {
-    console.log("on")
+
+app.listen (port, () => {
+    console.log("listening on port ", port)
 })
