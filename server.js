@@ -7,11 +7,8 @@ const port = 3000
 //set up static assets, middleware
 app.use(express.static("public"))
 
-
 // //link models
 const materials = require("./models/materials.js")
-
-
 
 //routes
 app.get("/", (req, res) => {
@@ -24,14 +21,13 @@ app.get("/materials", (req, res) => {
     })
 })
 
-
 app.get("materials/new", (req, res) => {
     res.render("new.ejs")
 })
 
-app.post("materials/:id", (req, res) => {
+// app.post("materials/:id", (req, res) => {
 
-})
+// })
 
 app.get("/materials/:id", (req, res) => {
     res.render("show.ejs", {
@@ -39,10 +35,7 @@ app.get("/materials/:id", (req, res) => {
     })
 })
 
-
-
 //listener
-
 
 app.listen (port, () => {
     console.log("listening on port ", port)
