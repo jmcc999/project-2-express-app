@@ -16,6 +16,9 @@ const materials = require("./models/materials.js")
 
 
 //routes
+app.get("/", (req, res) => {
+	res.render("home")
+})
 
 app.get("/materials", (req, res) => {
     res.render("index.ejs", {
