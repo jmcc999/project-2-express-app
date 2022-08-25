@@ -8,8 +8,6 @@ const port = 3000
 app.use(express.static("public"))
 
 
-
-
 // //link models
 const materials = require("./models/materials.js")
 
@@ -17,7 +15,7 @@ const materials = require("./models/materials.js")
 
 //routes
 app.get("/", (req, res) => {
-	res.render("home")
+	res.render("home.ejs")
 })
 
 app.get("/materials", (req, res) => {
@@ -29,6 +27,10 @@ app.get("/materials", (req, res) => {
 
 app.get("materials/new", (req, res) => {
     res.render("new.ejs")
+})
+
+app.post("materials/:id", (req, res) => {
+
 })
 
 app.get("/materials/:id", (req, res) => {
