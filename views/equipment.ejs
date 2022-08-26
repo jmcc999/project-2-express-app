@@ -1,0 +1,14 @@
+<%- include("./partials/header.ejs") %>
+
+    <ul id="list">
+    <% for(let i=0; i < allEquipment.length; i++) { %>
+        <li>
+          <a href="/equipment/<%=i%>">
+            <%= allEquipment[i].name %>
+         </a>
+        </li>
+ <% } %>
+    </ul>
+    <a href="/equipment/new">New</a>
+</body>
+</html>

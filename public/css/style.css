@@ -1,4 +1,13 @@
 body {
     text-align: center;
     background-image: url("/images/botw1.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center-top;
 }
+
+#list {
+    list-style: none;
+    margin: 30px;
+    padding: 30px;
+  }

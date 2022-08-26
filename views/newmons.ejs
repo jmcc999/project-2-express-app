@@ -1,0 +1,28 @@
+<%- include("./partials/header.ejs") %>
+
+    <h3>Add Monster</h3>
+
+
+    <form action="/materials" method="POST"> 
+     <fieldset>
+        <label for="spicies">Species:</label> 
+        <input id="type" type="text" name="type" placeholder="enter monster species">
+     </fieldset>
+     <fieldset>
+        <label for="info">Info:</label>
+        <input id="info" type="text" name="info" placeholder="enter monster info">
+     </fieldset>
+     <fieldset>
+        <label for="location">Location:</label>
+        <input id="location" type="text" name="location" placeholder="enter monster location">
+     </fieldset>
+     <fieldset>
+        <label for="drops">Drops:</label>
+        <input id="drops" type="text" name="drops" placeholder="enter monster drops">
+     </fieldset>
+        <button>Add Item</button>
+    </form>
+    
+
+</body>
+</html>

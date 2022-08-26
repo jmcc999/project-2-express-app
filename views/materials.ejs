@@ -1,8 +1,6 @@
 <%- include("./partials/header.ejs") %>
-<body>
-    <h1>The Legend of Zelda</h1>
-    <h2>Breath of the Wild</h2>
-    <ul>
+
+    <ul id="list">
     <% for(let i=0; i < allMats.length; i++) { %>
         <li>
           <a href="/materials/<%=i%>">
@@ -11,5 +9,6 @@
         </li>
  <% } %>
     </ul>
+    <a href="/materials/new">New</a>
 </body>
 </html>

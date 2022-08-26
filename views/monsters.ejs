@@ -1,0 +1,14 @@
+<%- include("./partials/header.ejs") %>
+
+    <ul id="list">
+    <% for(let i=0; i < allMonsters.length; i++) { %>
+        <li>
+          <a href="/monsters/<%=i%>">
+            <%= allMonsters[i].species %>
+         </a>
+        </li>
+ <% } %>
+    </ul>
+    <a href="/monsters/new">New</a>
+</body>
+</html>
