@@ -1,0 +1,28 @@
+<%- include("./partials/header.ejs") %>
+
+    <h3>Add Equipment</h3>
+
+
+    <form action="/equipment" method="POST"> 
+     <fieldset>
+        <label for="type">Type:</label> 
+        <input id="type" type="text" name="type" placeholder="enter equipment type">
+     </fieldset>
+     <fieldset>
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" placeholder="enter equipment name">
+     </fieldset>
+     <fieldset>
+        <label for="location">Location:</label>
+        <input id="location" type="text" name="location" placeholder="enter equipment location">
+     </fieldset>
+     <fieldset>
+        <label for="info">Info:</label>
+        <input id="info" type="text" name="info" placeholder="enter equipment info">
+     </fieldset>
+        <button>Add equipment</button>
+    </form>
+    
+
+</body>
+</html>
