@@ -2,35 +2,38 @@ const express = require("express")
 
 const app = express()
 
-const port = 3000
+const Material = require("./models/materials.js")
 
 const methodOverride = require('method-override')
 
-const mongoose = require("mongoose")
+require("dotenv").config()
 
-mongoose.connect("mongodb://127.0.0.1:27017/compendium", {useNewUrlParser: true})
+const PORT = process.env.PORT
+
+const mongoose = require('mongoose');
+const mongoURI = process.env.MONGODB_URI
+mongoose.connect(mongoURI);
 mongoose.connection.once("open", () => {
     console.log("candy-gram for mongo")
 })
 
 //set up static assets, middleware
-const materialsController = require("./controllers/router.js")
-app.use(materialsController)
+app.use(express.static("public"))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use(express.static("public"))
-app.use(methodOverride("_method"))
 
+app.use(methodOverride("_method"))
+const materialsController = require("./controllers/router.js")
+app.use("/materials", materialsController)
 // //link models
 // const materials = require("./models/materials.js")
 const equipment = require("./models/equipment.js")
 const monsters = require("./models/monsters.js")
-const Material = require("./models/materials.js")
 
 //routes
-// app.get("/", (req, res) => {
-// 	res.render("home.ejs")
-// })
+app.get("/", (req, res) => {
+	res.render("home.ejs")
+})
 
 // app.get("/materials", (req, res) => {
 //     Material.find({}, (error, material)=>{
@@ -198,6 +201,6 @@ app.get("/monsters/:id", (req, res) => {
 
 
     //listener
-app.listen (port, () => {
-    console.log("listening on port ", port)
+app.listen (PORT, () => {
+    console.log("listening on port ", PORT)
 })

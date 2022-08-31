@@ -2,13 +2,7 @@ const express = require("express")
 const router = express.Router()
 const Material = require("../models/materials.js")
 
-
-
 router.get("/", (req, res) => {
-	res.render("home.ejs")
-})
-
-router.get("/materials", (req, res) => {
     Material.find({}, (error, material)=>{
     res.render("materials.ejs", {
         allMats : material
@@ -31,7 +25,7 @@ router.post("/materials/", (req, res) => {
     })
 })
 
-router.get("/materials/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
    material = await Material.findById(req.params.id) 
         res.render("showmats.ejs", {
             material: material, 
