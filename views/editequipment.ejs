@@ -1,0 +1,11 @@
+<%- include("./partials/header.ejs") %>
+
+<form action="/equipment/<%=equipment.id%>?_method=PUT" method="POST">
+    Type: <input type="text" name="type" value="<%=equipment.type%>"/><br/>
+    Name: <input type="text" name="name" value="<%=equipment.name%>"/><br/>
+   Location: <input type="text" name="location" value="<%=equipment.location%>"/><br/>
+    Info: <input type="text" name="info" value="<%=equipment.info%>"/><br/>
+    <input type="submit" name="" value="Submit Changes"/>
+</form>
+</body>
+</html>

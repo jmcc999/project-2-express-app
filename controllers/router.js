@@ -10,11 +10,11 @@ router.get("/", (req, res) => {
     })
 })
 
-router.get("/materials/new", (req, res) => {
+router.get("/new", (req, res) => {
     res.render("newmats.ejs")
 })
 
-router.post("/materials/", (req, res) => {
+router.post("/", (req, res) => {
     Material.create(req.body, (error, createdMats) => {
         if (error){
             console.log(error)
@@ -25,11 +25,12 @@ router.post("/materials/", (req, res) => {
     })
 })
 
-router.get("/:id", async (req, res) => {
-   material = await Material.findById(req.params.id) 
+router.get("/:id",  (req, res) => {
+     Material.findById(req.params.id, (error, foundMaterial) => {
         res.render("showmats.ejs", {
-            material: material, 
-        })   
+            material: foundMaterial, 
+        })  
+    })     
 })
 
 router.delete(".materials/:id", (req, res)=>{
@@ -38,14 +39,14 @@ router.delete(".materials/:id", (req, res)=>{
     })
 })
 
-router.get('/materials/:id/edit', (req, res)=>{
+router.get('/:id/edit', (req, res)=>{
     Material.findById(req.params.id, (error, material) => { 
         res.render("editmats.ejs", {
     			material: material 
     		})
     })
 })
-router.put('/materials/:id', (req, res)=>{
+router.put('/:id', (req, res)=>{
     Material.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
         res.redirect("/materials")
     })

@@ -29,6 +29,7 @@ app.use("/materials", materialsController)
 // const materials = require("./models/materials.js")
 const equipment = require("./models/equipment.js")
 const monsters = require("./models/monsters.js")
+const router = require("./controllers/router.js")
 
 //routes
 app.get("/", (req, res) => {
@@ -77,6 +78,16 @@ app.get("/monsters/new", (req, res) => {
 //     })
 // })
 
+app.post("/equipment", (req, res) => {
+    equipment.push(req.body)
+        res.redirect("/equipment")
+})
+
+
+app.post("/monsters", (req, res) => {
+    monsters.push(req.body)
+        res.redirect("/monsters")
+})
 // app.get("/materials/:id",  (req, res) => {
 //     Material.findById(req.params.id, (error, material) => {
 //         res.render("showmats.ejs", {
@@ -103,6 +114,23 @@ app.get("/monsters/:id", (req, res) => {
         monsters : monsters[req.params.id]
     })
 })
+app.delete("/equipment/:id", (req, res) => {
+    equipment.splice(req.params.id, 1)
+    res.redirect("/equipment")
+})
+
+app.get("/equipment/:id/edit", (req, res) => {
+    res.render("edit.ejs", {
+        equipment: equipment[req.params.id],
+        id: req.params.id
+    })
+})
+
+app.put("/equipment/:id", (req, res) => {
+    equipment[req.params.id] = req.body
+    res.redirect("/equipment")
+})
+
 
 //seed
 // const seedMats = [
