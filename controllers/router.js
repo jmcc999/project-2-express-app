@@ -46,6 +46,7 @@ router.get('/:id/edit', (req, res)=>{
     		})
     })
 })
+
 router.put('/:id', (req, res)=>{
     Material.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
         res.redirect("/materials")
