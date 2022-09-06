@@ -114,9 +114,15 @@ app.get("/monsters/:id", (req, res) => {
         monsters : monsters[req.params.id]
     })
 })
+
 app.delete("/equipment/:id", (req, res) => {
     equipment.splice(req.params.id, 1)
     res.redirect("/equipment")
+})
+
+app.delete("/monsters/:id", (req, res) => {
+    monsters.splice(req.params.id, 1)
+    res.redirect("/monsters")
 })
 
 app.get("/equipment/:id/edit", (req, res) => {
@@ -126,11 +132,22 @@ app.get("/equipment/:id/edit", (req, res) => {
     })
 })
 
+app.get("/monsters/:id/edit", (req, res) => {
+    res.render("editmons.ejs", {
+        monster: monster[req.params.id],
+        id: req.params.id
+    })
+})
+
 app.put("/equipment/:id", (req, res) => {
     equipment[req.params.id] = req.body
     res.redirect("/equipment")
 })
 
+app.put("/monsters/:id", (req, res) => {
+    monster[req.params.id] = req.body
+    res.redirect("/monsters")
+})
 
 
 

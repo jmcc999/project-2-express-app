@@ -39,7 +39,7 @@ router.delete(".materials/:id", (req, res)=>{
     })
 })
 
-router.get('/:id/edit', (req, res)=>{
+router.get("/:id/edit", (req, res)=>{
     Material.findById(req.params.id, (error, material) => { 
         res.render("editmats.ejs", {
     			material: material 

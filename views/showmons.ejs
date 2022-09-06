@@ -5,7 +5,9 @@
     
     <p> <%= monsters.info %></p>
     <p>LOCATION:<%= monsters.location %></p>
-    <a href="/monsters/<%=id%>/editmons">Edit</a>
+    <a href="/monsters/<%=monsters%>/editmons">Edit</a>
+    <form action="/monsters/?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE"/>
+    </form>
 </body>
 </html>
-/pokemon/<%= i %>/edit
