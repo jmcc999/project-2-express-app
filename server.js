@@ -120,7 +120,7 @@ app.delete("/equipment/:id", (req, res) => {
 })
 
 app.get("/equipment/:id/edit", (req, res) => {
-    res.render("edit.ejs", {
+    res.render("editequipment.ejs", {
         equipment: equipment[req.params.id],
         id: req.params.id
     })

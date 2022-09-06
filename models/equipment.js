@@ -3,7 +3,7 @@ const equipment = [
         type:"one-handed weapon",
         name:"Master Sword",
         location:"Korok Forest",
-        info:"",
+        info:"The Sword To Seal The Darkness",
         defense: 0,
         attack: 30
      },
